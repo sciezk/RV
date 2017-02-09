@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<title>Hola, mundo!</title>
+<style type=text/css">
+body{
+	color: purple;
+background-color:#d8da3d}
+</style>
+</head>
+<html>
+<body>
+<p>Hola, mundo</p>
+</body>
