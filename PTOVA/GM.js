@@ -3,7 +3,7 @@ figura.moveTo(10, 10);
 
 figura.RoundedRect().setSize(100,40).
     setRadius(10);
-//revolucion extrsion vertices composicion
+
 var forma = new THREE.ShapeGeometry(figura);
 var malla = new THREE.Mesh(forma);
 var escena = new THREE.Scene();
