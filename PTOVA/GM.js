@@ -1,17 +1,13 @@
 //revolucion extrsion vertices composicion
 var puntos = [];
 for ( var i = 0; i < 50; i ++ ) {
+    puntos.push(new THREE.Vector2(
     var x = Math.random() * (80 - 1) + 1    //Math.random() * (max - min) + min
     var y = Math.random() * (80 - 1) + 1
     var z = Math.random() * (80 - 1) + 1
+    ));
 
-    var dotGeometry = new THREE.Geometry();
-    puntos.push(dotGeometry);
-    dotGeometry.vertices.push(new THREE.Vector3( x, y, z));
-    var dotMaterial = new THREE.PointsMaterial( { size: 3, sizeAttenuation: false, color: 0xFF0000 } );
-    var punto = new THREE.puntos( dotGeometry, dotMaterial );
-
-    scene.add(dot);
+    
 }
   //  puntos.push( new THREE.Vector2(
     //                        Math.sin( i * 0.2 ) * 15 + 50,
