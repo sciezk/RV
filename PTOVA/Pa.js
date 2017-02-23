@@ -3,7 +3,6 @@ figura.moveTo(10, 10);
 figura.lineTo(10, 20);
 figura.lineTo(20, 40);
 figura.lineTo(40, 60);
-figura.RoundedRect().setSize(60,40).setRadius(10);
 figura.LineTo(40,30);
 var forma = new THREE.ShapeGeometry(figura);
 var malla = new THREE.Mesh(forma);
