@@ -1,6 +1,6 @@
 //revolucion extrsion vertices composicion
 var puntos = [];
-for ( var i = 0; i <= 50; i ++ ) {
+for ( var i = 0; i < 50; i ++ ) {
     puntos.push(new THREE.Vector2(
     var x = Math.random() * (80 - 1) + 1    //Math.random() * (max - min) + min
     var y = Math.random() * (80 - 1) + 1
