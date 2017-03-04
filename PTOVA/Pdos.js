@@ -1,20 +1,29 @@
-var luzPuntual= new THREE.PointLight(0xFFFFFF);
-luzPuntual.position.x=10;
-luzPuntual.position.y=10;
-luzPuntual.position.z=10;
+var forma = new THREE.Geometry();
 
-var forma = new THREE.SphereGeometry(1);
-var material = new THREE.MeshLambertMaterial({color: '#00cc00'});
-var malla = new THREE.Mesh(forma, material);
+forma.vertices.push( new THREE.Vector3( 1, 0, 1) );
+forma.vertices.push( new THREE.Vector3( 1, 0, -1) );
+forma.vertices.push( new THREE.Vector3( -1, 0, -1) );
+forma.vertices.push( new THREE.Vector3( -1, 0, 1) );
+forma.vertices.push( new THREE.Vector3( 0, 1, 0) );
 
-var escena= new THREE.Scene();
-escena.add(malla);
-escena.add(luzPuntual);
+forma.faces.push( new THREE.Face3( 3, 2, 1 ) );
+forma.faces.push( new THREE.Face3( 3, 1, 0 ) );
+forma.faces.push( new THREE.Face3( 3, 0, 4 ) );
+forma.faces.push( new THREE.Face3( 0, 1, 4 ) );
+forma.faces.push( new THREE.Face3( 1, 2, 4 ) );
+forma.faces.push( new THREE.Face3( 2, 3, 4 ) );
 
+forma.computeBoundingSphere();
+forma.computeFaceNormals();
+
+var material = new THREE.MeshNormalMaterial();
+var malla = new THREE.Mesh( forma, material );
+malla.rotateX(Math.PI/4);
+var escena = new THREE.Scene();
+escena.add( malla );
 var camara = new THREE.PerspectiveCamera();
-camara.position.z=5;
-
-var lienzo=document.getElementById("lambertMaterial");
-var renderizador = new THREE.WebGLRenderer({canvas: lienzo, antialias: true});
-renderizador.setSize(600,600);
-renderizador.render(escena, camara);
+camara.position.z = 5;
+var renderizador = new THREE.WebGLRenderer();
+renderizador.setSize( window.innerHeight*.95, window.innerHeight*.95 );
+document.body.appendChild( renderizador.domElement );
+renderizador.render ( escena, camara );
