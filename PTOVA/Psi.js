@@ -1,6 +1,6 @@
 var puntos = [];
 for ( var i=0; i<50; i++){
-  puntos.push(new THREE.Vector2(Math.hsin(i*0.2)*15+50, (i-5)*2));
+  puntos.push(new THREE.Vector3(Math.sin(i*0.2)*15+50, (i-5)*2),Math.cos(i),0);
 }
 
 var forma = new THREE.LatheGeometry(puntos);
