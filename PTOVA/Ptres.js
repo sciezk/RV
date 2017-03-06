@@ -5,7 +5,7 @@ for ( var i=0; i<50; i++){
 
 var forma = new THREE.LatheGeometry(puntos);
 
-var material = new THREE.MeshPhongMaterial( { color: 0xffffff, shading: THREE.FlatShading, vertexColors: THREE.VertexColors, shininess: 0 } ),
+var material = new THREE.MeshPhongMaterial( { color: 0xffffff, shading: THREE.FlatShading, vertexColors: THREE.VertexColors, shininess: 0 } );
 var malla = new THREE.Mesh(forma, material);
 //malla.rotateX(Math.PI/6);
 malla.position.x = 400;
