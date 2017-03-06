@@ -12,9 +12,11 @@ figura.lineTo(-15, -15);
 figura.lineTo(-30, 0);
 figura.lineTo(-10, 0);
 
-var forma = new THREE.ShapeGeometry(figura);
-var malla = new THREE.Mesh(forma);
-
+var forma = new THREE.ExtrudeGeometry( figura,
+                                       {amount: 10} );
+var material = new THREE.MeshNormalMaterial();
+var malla = new THREE.Mesh( forma, material );
+malla.rotateY( Math.PI/4 );
 var escena = new THREE.Scene();
 escena.add(malla);
 var camara = new THREE.PerspectiveCamera();
