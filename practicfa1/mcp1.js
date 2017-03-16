@@ -1,7 +1,7 @@
 var torreForma = new THREE.CylinderBufferGeometry(5, 5, 20, 32);
 var esferaForma = new THREE.SphereGeometry(5,30,32);
 var raizForma =  new THREE.BoxGeometry( 5,5, 5 );
-esferaForma.translate(0,1,0);
+//esferaForma.translate(0,1,0);
 
 var torreMalla = new THREE.Mesh(torreForma);
 var esferaMalla = new THREE.Mesh(esferaForma);
