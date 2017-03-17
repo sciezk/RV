@@ -6,7 +6,7 @@ var raizForma =  new THREE.BoxGeometry( 5,5, 5 );
 var torreMalla = new THREE.Mesh(torreForma);
 var esferaMalla = new THREE.Mesh(esferaForma);
 var raizMalla = new THREE.Mesh(raizForma);
-var material = new THREE.MeshBasicMaterial( {color: 0xffff00} );
+var material = new THREE.MeshBasicMaterial();
 
 var hongoForma = new THREE.Geometry();
 hongoForma.merge(torreMalla.geometry, torreMalla.matrix);
