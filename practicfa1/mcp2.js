@@ -4,7 +4,7 @@ var cubierta2Forma = new THREE.SphereGeometry(3, 50, 50, 0, Math.PI * 2, 0, Math
 
 
 troncoForma.translate(0,4,0);
-cubierta1Forma.translate(0,8,0);
+cubierta1Forma.translate(0,1,0);
 cubierta2Forma.translate(0,10,0);
 
 var toncoMalla= new THREE.Mesh(troncoForma);
