@@ -3,9 +3,9 @@ var cubierta1Forma = new THREE. ConeGeometry( 5, 20, 32 );
 var cubierta2Forma = new THREE.SphereGeometry(3, 50, 50, 0, Math.PI * 2, 0, Math.PI * 2);
 
 
-troncoForma.translate(0,4,0);
+troncoForma.translate(0,10,0);
 cubierta1Forma.translate(0,1,0);
-cubierta2Forma.translate(0,10,0);
+cubierta2Forma.translate(0,6,0);
 
 var toncoMalla= new THREE.Mesh(troncoForma);
 var cubierta1Malla= new THREE.Mesh(cubierta1Forma);
