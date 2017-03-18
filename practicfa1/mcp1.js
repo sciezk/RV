@@ -3,7 +3,7 @@ var cubierta1Forma = new THREE. BoxGeometry(7,.2,7);
 var cubierta2Forma = new THREE.SphereGeometry(3, 21, 21);
 var conForma = new THREE.CylinderGeometry(1,2,4,10,6,false);
 var baForma = new THREE.CylinderGeometry(2,2,0.6,10,6,false);
-var ba2Forma = new THREE.CylinderGeometry(4,4,1,10,6,false);
+var ba2Forma = new THREE.CylinderGeometry(4,4,1,20,15,false);
 
 
 troncoForma.translate(0,8,0);
