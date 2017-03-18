@@ -1,4 +1,4 @@
-var troncoForma = new THREE.DodecahedronGeometry(3,3);
+var troncoForma = new THREE.DodecahedronGeometry(3,3,3);
 //var cubierta1Forma = new THREE. ConeGeometry( 5, 20, 32 );
 //var cubierta2Forma = new THREE.SphereGeometry(3, 50, 50, 0, Math.PI * 2, 0, Math.PI * 2);
 
