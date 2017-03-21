@@ -13,7 +13,7 @@ troncoForma.translate(0,7,0);
 //conForma.translate(0,1,0);
 //cubierta1Forma.translate(0,1,0);
 cubierta2Forma.translate(0,13,0);
-ba3Forma.translate(0,8,0);
+ba3Forma.translate(0,11,0);
 
 var toncoMalla= new THREE.Mesh(troncoForma);
 //var conMalla= new THREE.Mesh(conForma);
