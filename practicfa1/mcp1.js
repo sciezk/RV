@@ -1,6 +1,6 @@
 var troncoForma = new THREE.CylinderGeometry(1.5,2,9,10,6,false);
 var cubierta1Forma = new THREE. BoxGeometry(7,.2,7);
-var cubierta2Forma = new THREE.SphereGeometry(2, 2, 21);
+var cubierta2Forma = new THREE.SphereGeometry(3, 2, 21);
 var conForma = new THREE.CylinderGeometry(1,2,2,10,6,false);
 var baForma = new THREE.CylinderGeometry(2,2,0.6,10,6,false);
 var ba2Forma = new THREE.CylinderGeometry(3,3,1,20,32,false);
