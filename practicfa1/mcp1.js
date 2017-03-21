@@ -7,7 +7,7 @@ var cubierta2Forma = new THREE.SphereGeometry(2.5, 25, 25);
 var ba3Forma = new THREE.ConeGeometry( 2, 6, 32 );
 
 
-troncoForma.translate(0,7,0);
+troncoForma.translate(0,1,0);
 //baForma.translate(0,2,0);
 //ba2Forma.translate(0,6,0);
 //conForma.translate(0,1,0);
