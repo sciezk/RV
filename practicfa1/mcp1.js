@@ -8,7 +8,7 @@ var ba3Forma = new THREE.ConeGeometry( 2, 6, 32 );
 
 
 troncoForma.translate(0,8,0);
-baForma.translate(0,0,0);
+baForma.translate(0,2,0);
 //ba2Forma.translate(0,6,0);
 //conForma.translate(0,1,0);
 //cubierta1Forma.translate(0,1,0);
