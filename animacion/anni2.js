@@ -1,9 +1,3 @@
-function listener(){
-
-camara.aspect=window.innerWidth/window.innerHeight
-camara.updateProjectionMatrix();
-renderer.setSize(window.innerWith, window.innerHeight);
-}
 function setup(){
 
 	escena = new THREE.Scene();
@@ -14,7 +8,12 @@ function setup(){
 	document.body.appendChild(renderer.domElement);
 	malla = new THREE.Mesh(new THREE.SphereGeometry(1), new THREE.MeshNormalMaterial());
 	escena.add(malla);
-  
+ var listener=function(){
+
+camara.aspect=window.innerWidth/window.innerHeight
+camara.updateProjectionMatrix();
+renderer.setSize(window.innerWith, window.innerHeight);
+}
   var tipoEvento='resize';
   var capturar=false;
   window.addEventListener(tipoEvento,listener,capturer);
