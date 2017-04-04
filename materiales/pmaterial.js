@@ -3,7 +3,7 @@ var forma= new THREE.BoxGeometry(100,100,300);
 var material = new THREE.MeshDepthMaterial();
 malla= new THREE.Mesh(forma, material);
 
-escena= new THREE.scene();
+escena= new THREE.Scene();
 escena.add(malla);
 
 camara= new THREE.Pespectivecamera();
