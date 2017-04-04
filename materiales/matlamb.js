@@ -3,8 +3,14 @@ var forma= new THREE.BoxGeometry(1,1,1);
 var material = new THREE.MeshLambertMaterial({color:'#08cc00'});
 malla= new THREE.Mesh(forma, material);
 
+ var LuzPuntual= new THREE.PointLight(0xcc00cc);
+ LuzPuntual.position.x=10;
+ LuzPuntual.position.y=10;
+ LuzPuntual.position.z=10;
+ 
 escena= new THREE.Scene();
 escena.add(malla);
+escena.add(LuzPuntual);
 
 camara= new THREE.Pespectivecamera();
 camara.position.z=5;
