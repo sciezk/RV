@@ -1,6 +1,6 @@
 function setup(){
 var forma= new THREE.BoxGeometry(100,100,300);
-var material = new THREE.MeshDeptMaterial();
+var material = new THREE.MeshDepthMaterial();
 malla= new THREE.Mesh(forma, material);
 
 escena= new THREE.scene();
