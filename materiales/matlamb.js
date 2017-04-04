@@ -12,12 +12,12 @@ escena= new THREE.Scene();
 escena.add(malla);
 escena.add(LuzPuntual);
 
-camara= new THREE.Pespectivecamera();
+camara= new THREE.PespectiveCamera();
 camara.position.z=5;
 
 renderer =new THREE.WebGLRenderer();
 renderer.setsize(Window.innerHeight*.95,window.innerHeight*.95);
-document.body.appendchild(renderer.domElement);
+document.body.appendChild(renderer.domElement);
 }
 function loop(){
 
