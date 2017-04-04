@@ -6,12 +6,12 @@ malla= new THREE.Mesh(forma, material);
 escena= new THREE.Scene();
 escena.add(malla);
 
-camara= new THREE.Pespectivecamera();
+camara= new THREE.PespectiveCamera();
 camara.position.z=250;
 
 renderer =new THREE.WebGLRenderer();
 renderer.setsize(Window.innerHeight*.95,window.innerHeight*.95);
-document.body.appendchild(renderer.domElement);
+document.body.appendChild(renderer.domElement);
 }
 function loop(){
 
