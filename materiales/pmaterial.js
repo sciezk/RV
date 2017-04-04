@@ -6,7 +6,7 @@ malla= new THREE.Mesh(forma, material);
 escena= new THREE.Scene();
 escena.add(malla);
 
-camara= new THREE.PespectiveCamera();
+camara= new THREE.PerspectiveCamera();
 camara.position.z=250;
 
 renderer =new THREE.WebGLRenderer();
