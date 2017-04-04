@@ -3,7 +3,7 @@ var forma= new THREE.BoxGeometry(1,1,1);
 var material = new THREE.MeshLambertMaterial({color:'#08cc00'});
 malla= new THREE.Mesh(forma, material);
 
-escena= new THREE.scene();
+escena= new THREE.Scene();
 escena.add(malla);
 
 camara= new THREE.Pespectivecamera();
