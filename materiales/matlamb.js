@@ -12,7 +12,7 @@ escena= new THREE.Scene();
 escena.add(malla);
 escena.add(LuzPuntual);
 
-camara= new THREE.PespectiveCamera();
+camara= new THREE.PerspectiveCamera();
 camara.position.z=5;
 
 renderer =new THREE.WebGLRenderer();
