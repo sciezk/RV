@@ -8,7 +8,7 @@ cubo1.position.x=0.7;
 cubo2.position.x=-0.7;
 
 camara=new THREE.PerspectiveCamera();
-camara.position.z=15;
+camara.position.z=20;
 
 //Raycastling es una tecnica que se utiliza para determinar la inserccion de superficies en computacion grafica y geometrica
 raycaster1=new THREE.Raycaster(pelota.position, new THREE.Vector3(1,0,0));
