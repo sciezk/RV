@@ -26,7 +26,7 @@ cubo2.rotation.y+=step;
 
 renderer.render(escena,camara);
 requestAnimationFrame(loop);
-+
+}
 var cubo1,cubo2,escena,camara,renderer;
 setup();
 loop();
