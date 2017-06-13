@@ -68,3 +68,4 @@
 			updateFn(deltaMsec/1000, nowMsec/1000)
 		})
 	})
+</script></body>
