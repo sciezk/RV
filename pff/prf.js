@@ -3740,12 +3740,12 @@ function setup() {
   camara = new THREE.PerspectiveCamera();
   camara.position.z=140;
   camara.position.x=-80;
-camara.position.y=0;
+camara.position.y=4;
   //camara.lookAt(45, 20, -45);
   
   ///////////////////////////////////////////Renderizador//////////////////////////////////////////////////////////////////////////
   renderizador = new THREE.WebGLRenderer({antialias:true});
-  renderizador.setSize( window.innerHeight, window.innerHeight);
+  renderizador.setSize( window.innerWidth , window.innerHeight);
   renderizador.shadowMap.enabled=true;
   document.body.appendChild(renderizador.domElement);
   
