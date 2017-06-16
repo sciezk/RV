@@ -3865,32 +3865,30 @@ function Seleccion(x=0,y=0,z=0){
 Seleccion.prototype = new Agent();
 //////////////////////////////////////Init y loop/////////////////////////////////////////////////////////////////////////////////////
 
-setup=function() {
-   escena = new Environment();	
+setup();
+loop();
 
+function setup() {
+
+  escena = new Environment();	
+	
   //////////////////////////////////////////////////Camara///////////////////////////////////////////////////////////////////////
-  var campoVision = 45;
-  var relacionAspecto = window.innerWidth / window.innerHeight;
-  var planoCercano = 1;
-  var planoLejano = 1000;
-  camara = new THREE.PerspectiveCamera(campoVision, relacionAspecto, planoCercano, planoLejano);
+  camara = new THREE.PerspectiveCamera();
   camara.position.z=150;
-  camara.position.x=100;
-  camara.position.y=40;
-  camara.lookAt(new THREE.Vector3(40,40,0));
-  camara.rotateZ(Math.PI/2);
+  camara.position.x=-30;
+camara.position.y=0;
+  //camara.lookAt(45, 20, -45);
   
-
   ///////////////////////////////////////////Renderizador//////////////////////////////////////////////////////////////////////////
   renderizador = new THREE.WebGLRenderer({antialias:true});
-  renderizador.setSize( window.innerWidth-100, window.innerHeight-100 );
+  renderizador.setSize( window.innerHeight*.95, window.innerHeight*.95 );
   renderizador.shadowMap.enabled=true;
   document.body.appendChild(renderizador.domElement);
   
   /////////////////////////////////////////////////////Luces/////////////////////////////////////////////////////////////////////
    var luzPuntual1 = new THREE.PointLight(0xFFFFFF,1);
-   luzPuntual1.position.x = 40;
-   luzPuntual1.position.y = 40;
+   luzPuntual1.position.x = -50;
+   luzPuntual1.position.y = 300;
    luzPuntual1.position.z = 50;
 	
    var luzPuntual2 = new THREE.PointLight(0xFFFFFF,1);
@@ -3904,7 +3902,7 @@ setup=function() {
    luzPuntual3.position.z = -50;
 
   ///////////////////////////////////////////Tablero////////////////////////////////////////////////////////////////
-   var lado = 8;
+   var lado = 10;
    var forma = new THREE.BoxBufferGeometry(lado,lado,lado);
    cubos = [];
    var material = Blanco;
@@ -4024,14 +4022,17 @@ setup=function() {
   escena.add(cursor);
   
   //Luces
- escena.add(luzPuntual1, luzPuntual2, luzPuntual3);
+  escena.add(luzPuntual1, luzPuntual2, luzPuntual3);
+ escena.rotateX(Math.PI/4);
+escena.rotateY(Math.PI/2);
+//escena.rotateZ(Math.PI/2);
 }
-loop=function(){
-	
-requestAnimationFrame(loop);
-escena.sense();
-escena.plan();
-escena.act();
+
+function loop() {
+  requestAnimationFrame(loop);
+  escena.sense();
+  escena.plan();
+  escena.act();
+  renderizador.render(escena,camara);
 }
-setup();
-loop();
+
