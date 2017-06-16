@@ -3839,8 +3839,7 @@ VENTANA.listener=function(){
   VENTANA.renderizador.setSize( window.innerWidth, window.innerHeight);
 }
 
-VENTANA.setup();
-VENTANA.loop();
+
 
 VENTANA.setup=function() {
   var tipo_evento='resize';
@@ -4010,4 +4009,5 @@ VENTANA.loop=function(){
   VENTANA.escena.plan();
   VENTANA.escena.act();
 }
-
+VENTANA.setup();
+VENTANA.loop();
