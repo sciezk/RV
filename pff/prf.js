@@ -58,7 +58,7 @@ var reyblanco,reynegro;
 var Gris = new THREE.MeshLambertMaterial({ map: THREE.ImageUtils.loadTexture('maden.jpg') });
 var Blanco = new THREE.MeshLambertMaterial({ map: THREE.ImageUtils.loadTexture('madera.jpg') });
 var Marco = new THREE.MeshLambertMaterial({ map: THREE.ImageUtils.loadTexture('cristal.jpg') });
-var GrisLiso = new THREE.MeshLambertMaterial({map: THREE.ImageUtils.loadTexture('mapim.jpg'});
+var GrisLiso = new THREE.MeshLambertMaterial({map: THREE.ImageUtils.loadTexture('mapim.jpg')});
 var BlancoLiso = new THREE.MeshLambertMaterial({map: THREE.ImageUtils.loadTexture('mapib.jpg'});
 
 //Sensor
@@ -3832,33 +3832,28 @@ function Seleccion(x=0,y=0,z=0){
 
 Seleccion.prototype = new Agent();
 //////////////////////////////////////Init y loop/////////////////////////////////////////////////////////////////////////////////////
-var VENTANA = new Object();
-VENTANA.listener=function(){
-  VENTANA.camara.aspect = window.innerWidth / window.innerHeight;
-  VENTANA.camara.updateProjectionMatrix();
-  VENTANA.renderizador.setSize( window.innerWidth, window.innerHeight);
-}
 
-
-
-VENTANA.setup=function() {
-  var tipo_evento='resize';
-  var capturarp=false;
-  window.addEventListener(tipo_evento, VENTANA.listener, capturarp); 
-  VENTANA.escena = new Environment();	
+setup=function() {
+   escena = new Environment();	
 
   //////////////////////////////////////////////////Camara///////////////////////////////////////////////////////////////////////
-  VENTANA.camara = new THREE.PerspectiveCamera();
+  var campoVision = 45;
+  var relacionAspecto = window.innerWidth / window.innerHeight;
+  var planoCercano = 1;
+  var planoLejano = 1000;
+  camara = new THREE.PerspectiveCamera(campoVision, relacionAspecto, planoCercano, planoLejano);
   camara.position.z=150;
-  camara.position.x=-30;
-  camara.position.y=0;
-  //camara.lookAt(45, 20, -45);
-  var lienzo=document.getElementById("prf.js");
+  camara.position.x=100;
+  camara.position.y=40;
+  camara.lookAt(new THREE.Vector3(40,40,0));
+  camara.rotateZ(Math.PI/2);
+  
+
   ///////////////////////////////////////////Renderizador//////////////////////////////////////////////////////////////////////////
-  VENTANA.renderizador = new THREE.WebGLRenderer({antialias:true});
-  VENTANA.renderizador.setSize( window.innerHeight*.95, window.innerHeight*.95 );
-  VENTANA.renderizador.shadowMap.enabled=true;
-  VENTANA.document.body.appendChild(VENTANA.renderizador.domElement);
+  renderizador = new THREE.WebGLRenderer({antialias:true});
+  renderizador.setSize( window.innerWidth-100, window.innerHeight-100 );
+  renderizador.shadowMap.enabled=true;
+  document.body.appendChild(renderizador.domElement);
   
   /////////////////////////////////////////////////////Luces/////////////////////////////////////////////////////////////////////
    var luzPuntual1 = new THREE.PointLight(0xFFFFFF,1);
@@ -3877,7 +3872,7 @@ VENTANA.setup=function() {
    luzPuntual3.position.z = -50;
 
   ///////////////////////////////////////////Tablero////////////////////////////////////////////////////////////////
-   var lado = 10;
+   var lado = 8;
    var forma = new THREE.BoxBufferGeometry(lado,lado,lado);
    cubos = [];
    var material = Blanco;
@@ -3890,7 +3885,7 @@ VENTANA.setup=function() {
        else{
            material= Gris;
            }
-       VENTANA.cubo = new THREE.Mesh(forma ,material);
+       cubo = new THREE.Mesh(forma ,material);
        cubo.position.x = (j+1)*lado;
        cubo.position.z = (-i-1)*lado;
        cubos.push(cubo)
@@ -3898,40 +3893,40 @@ VENTANA.setup=function() {
        }
    }
 
-   VENTANA.orilla1 = new THREE.BoxGeometry( 90, 10, 5 ); //Superior
+   orilla1 = new THREE.BoxGeometry( 90, 10, 5 ); //Superior
    var material1 = Marco;
-   VENTANA.marco1 = new THREE.Mesh( orilla1, material1 );
+   marco1 = new THREE.Mesh( orilla1, material1 );
    marco1.translateZ(-87.5);
    marco1.translateX(45);
    marco1.receiveShadow = true;
 
-   VENTANA.orilla2 = new THREE.BoxGeometry( 5, 10, 90 ); //Derecha
+   orilla2 = new THREE.BoxGeometry( 5, 10, 90 ); //Derecha
    var material2 = Marco;
-   VENTANA.marco2 = new THREE.Mesh( orilla2, material2);
+   marco2 = new THREE.Mesh( orilla2, material2);
    marco2.translateZ(-45);
    marco2.translateX(87.5);
    marco2.receiveShadow = true;
 
-   VENTANA.orilla3 = new THREE.BoxGeometry( 90, 10, 5 ); //Izquierda
+   orilla3 = new THREE.BoxGeometry( 90, 10, 5 ); //Izquierda
    var material3 = Marco;
-   VENTANA.marco3 = new THREE.Mesh( orilla3, material3);
+   marco3 = new THREE.Mesh( orilla3, material3);
    marco3.translateZ(-2.5);
    marco3.translateX(45);
    marco3.receiveShadow = true;
 
-   VENTANA.orilla4 = new THREE.BoxGeometry( 5, 10, 80 ); //Baja
+   orilla4 = new THREE.BoxGeometry( 5, 10, 80 ); //Baja
    var material4 = Marco;
-   VENTANA.marco4 = new THREE.Mesh( orilla4, material4);
+   marco4 = new THREE.Mesh( orilla4, material4);
    marco4.translateZ(-45);
    marco4.translateX(2.5);
    marco4.receiveShadow = true;
    
    //Agregar tablero a  escena
-   VENTANA.escena.add(marco1, marco2, marco3, marco4);
+   escena.add(marco1, marco2, marco3, marco4);
    
    for(var q=0; q<=63; q++){
       cubos[q].receiveShadow = true;
-      VENTANA.escena.add(cubos[q]);
+      escena.add(cubos[q]);
    }
 	
   ///////////////////////////////////////////Torres////////////////////////////////////////////////////////////////
@@ -3940,7 +3935,7 @@ VENTANA.setup=function() {
   torrenegra1 = new TorreNegra(80,4.5,-10);
   torrenegra2 = new TorreNegra(80,4.5,-80);
 	
-  VENTANA.escena.add(torreblanca1,torreblanca2,torrenegra1,torrenegra2);
+  escena.add(torreblanca1,torreblanca2,torrenegra1,torrenegra2);
 	
   /////////////////////////////////////////Peones/////////////////////////////////////////////////////////////////
   peonblanco1 = new PeonBlanco(20,4.5,-10);
@@ -3961,8 +3956,8 @@ VENTANA.setup=function() {
   peonnegro7 = new PeonNegro(70,4.5,-70);
   peonnegro8 = new PeonNegro(70,4.5,-80);
 	
-  VENTANA.escena.add(peonblanco1,peonblanco2,peonblanco3,peonblanco4,peonblanco5,peonblanco6,peonblanco7,peonblanco8);
-  VENTANA.escena.add(peonnegro1,peonnegro2,peonnegro3,peonnegro4,peonnegro5,peonnegro6,peonnegro7,peonnegro8);
+  escena.add(peonblanco1,peonblanco2,peonblanco3,peonblanco4,peonblanco5,peonblanco6,peonblanco7,peonblanco8);
+  escena.add(peonnegro1,peonnegro2,peonnegro3,peonnegro4,peonnegro5,peonnegro6,peonnegro7,peonnegro8);
 	
   /////////////////////////////////////////Alfiles/////////////////////////////////////////////////////////////////
   alfilblanco1 = new AlfilBlanco(10,4.5,-30);
@@ -3970,7 +3965,7 @@ VENTANA.setup=function() {
   alfilnegro1 = new AlfilNegro(80,4.5,-30);
   alfilnegro2 = new AlfilNegro(80,4.5,-60);
 	
-  VENTANA.escena.add(alfilblanco1,alfilblanco2,alfilnegro1,alfilnegro2);
+  escena.add(alfilblanco1,alfilblanco2,alfilnegro1,alfilnegro2);
 	
   ////////////////////////////////////////////Caballos/////////////////////////////////////////////////////////////
   caballoblanco1 = new CaballoBlanco(10,4.5,-20);
@@ -3978,36 +3973,36 @@ VENTANA.setup=function() {
   caballonegro1 = new CaballoNegro(80,4.5,-20);
   caballonegro2 = new CaballoNegro(80,4.5,-70);
 	
-  VENTANA.escena.add(caballoblanco1,caballoblanco2,caballonegro1,caballonegro2);	
+  escena.add(caballoblanco1,caballoblanco2,caballonegro1,caballonegro2);	
 	
   ////////////////////////////////////////////Reinas/////////////////////////////////////////////////////////////////
   reinablanca = new ReinaBlanca(10,4.5,-40);
   reinanegra = new ReinaNegra(80,4.5,-40);
 	
-  VENTANA.escena.add(reinablanca,reinanegra);
+  escena.add(reinablanca,reinanegra);
 	
   ///////////////////////////////////////////Reyes////////////////////////////////////////////////////////////////////
   reyblanco = new ReyBlanco(10,4.5,-50);
   reynegro = new ReyNegro(80,4.5,-50);
 	
-  VENTANA.escena.add(reyblanco,reynegro);	
+  escena.add(reyblanco,reynegro);	
 	
   /////////////////////////////////////////Bloques////////////////////////////////////////////////////////////////////
   cursor = new Cursor(10,0,-10);
-  VENTANA.escena.add(cursor);
+  escena.add(cursor);
   
   //Luces
-  VENTANA.escena.add(luzPuntual1, luzPuntual2, luzPuntual3);
-  VENTANA.escena.rotateX(Math.PI/4);
-  VENTANA.escena.rotateY(Math.PI/2);
+ escena.add(luzPuntual1, luzPuntual2, luzPuntual3);
+ escena.rotateX(Math.PI/4);
+ escena.rotateY(Math.PI/2);
 //escena.rotateZ(Math.PI/2);
 }
-VENTANA.loop=function(){
+loop=function(){
 	
-  requestAnimationFrame(VENTANA.loop);
-  VENTANA.escena.sense();
-  VENTANA.escena.plan();
-  VENTANA.escena.act();
+  requestAnimationFrame(loop);
+escena.sense();
+escena.plan();
+escena.act();
 }
-VENTANA.setup();
-VENTANA.loop();
+setup();
+loop();
