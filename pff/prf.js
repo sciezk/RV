@@ -3745,7 +3745,7 @@ camara.position.y=4;
   
   ///////////////////////////////////////////Renderizador//////////////////////////////////////////////////////////////////////////
   renderizador = new THREE.WebGLRenderer({antialias:true});
-  renderizador.setSize( window.innerHeight, window.innerHeight;
+  renderizador.setSize( window.innerHeight, window.innerHeight);
   renderizador.shadowMap.enabled=true;
   document.body.appendChild(renderizador.domElement);
   
