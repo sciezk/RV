@@ -3739,8 +3739,8 @@ function setup() {
   //////////////////////////////////////////////////Camara///////////////////////////////////////////////////////////////////////
   camara = new THREE.PerspectiveCamera();
   camara.position.z=170;
-  camara.position.x=-110;
-camara.position.y=4;
+  camara.position.x=-90;
+camara.position.y=0;
   //camara.lookAt(45, 20, -45);
   
   ///////////////////////////////////////////Renderizador//////////////////////////////////////////////////////////////////////////
@@ -3889,7 +3889,7 @@ camara.position.y=4;
   escena.add(luzPuntual1, luzPuntual2, luzPuntual3);
  escena.rotateX(Math.PI/4);
  escena.rotateY(Math.PI/2);
- escena.rotateZ(Math.PI/3);
+
 
 }
 
