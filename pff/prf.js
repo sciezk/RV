@@ -458,9 +458,9 @@ Cursor.prototype.act = function(environment){
 				seleccion.position.x=posicioninicial.position.x;seleccion.position.z=posicioninicial.position.z;
 			}
 		    }//fin prototype act
-		    
+		    alert("Terminó tu turno  ");
 		  }//fin if torreblanca1
-	          alert("Terminó tu turno  ");
+	          
 
 //////////////////////////////////    Torre Blanca 2     //////////////////////////////////////////////////////////
 		  if (torreblanca2.position.x===posicioninicial.position.x && torreblanca2.position.z===posicioninicial.position.z){
@@ -556,9 +556,9 @@ Cursor.prototype.act = function(environment){
 				seleccion.position.x=posicioninicial.position.x;seleccion.position.z=posicioninicial.position.z;
 			}
 		    }//fin prototype act
-		   
+		    alert("Terminó tu turno  ");
 		  }//fin if torreblanca2
-			 alert("Terminó tu turno  ");
+			
 			
 //////////////////////////////////    Torre Negra 1     //////////////////////////////////////////////////////////
 		  if (torrenegra1.position.x===posicioninicial.position.x && torrenegra1.position.z===posicioninicial.position.z){
@@ -654,9 +654,9 @@ Cursor.prototype.act = function(environment){
 				seleccion.position.x=posicioninicial.position.x;seleccion.position.z=posicioninicial.position.z;
 			}
 		    }//fin prototype act
-		   
+		    alert("Terminó tu turno  ");
 		  }//fin if torreblanca2
-			 alert("Terminó tu turno  ");
+			
 			
 //////////////////////////////////    Torre Negra 2     //////////////////////////////////////////////////////////
 		  if (torrenegra2.position.x===posicioninicial.position.x && torrenegra2.position.z===posicioninicial.position.z){
@@ -752,9 +752,9 @@ Cursor.prototype.act = function(environment){
 				seleccion.position.x=posicioninicial.position.x;seleccion.position.z=posicioninicial.position.z;
 			}
 		    }//fin prototype act
-		    
+		    alert("Terminó tu turno  ");
 		  }//fin if torreblanca2
-			alert("Terminó tu turno  ");
+			
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////   PEONES    ///////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -854,9 +854,9 @@ Cursor.prototype.act = function(environment){
 				seleccion.position.x=posicioninicial.position.x;seleccion.position.z=posicioninicial.position.z;
 			}
 		    }//fin prototype act
-		    
+		    alert("Terminó tu turno  ");
 		  }//fin if peonblanco1
-			alert("Terminó tu turno  ");
+			
 			
 //////////////////////////////////    Peón Blanco 2     //////////////////////////////////////////////////////////
 		  if (peonblanco2.position.x===posicioninicial.position.x && peonblanco2.position.z===posicioninicial.position.z){
@@ -953,9 +953,9 @@ Cursor.prototype.act = function(environment){
 				seleccion.position.x=posicioninicial.position.x;seleccion.position.z=posicioninicial.position.z;
 			}
 		    }//fin prototype act
-		
+		   alert("Terminó tu turno  ");
 		  }//fin if peonblanco2	
-			    alert("Terminó tu turno  ");
+			 
 			
 //////////////////////////////////    Peón Blanco 3     //////////////////////////////////////////////////////////
 		  if (peonblanco3.position.x===posicioninicial.position.x && peonblanco3.position.z===posicioninicial.position.z){
@@ -1052,9 +1052,9 @@ Cursor.prototype.act = function(environment){
 				seleccion.position.x=posicioninicial.position.x;seleccion.position.z=posicioninicial.position.z;
 			}
 		    }//fin prototype act
-		   
+		    alert("Terminó tu turno  ");
 		  }//fin if peonblanco3
-			 alert("Terminó tu turno  ");
+			
 			
 //////////////////////////////////    Peón Blanco 4     //////////////////////////////////////////////////////////
 		  if (peonblanco4.position.x===posicioninicial.position.x && peonblanco4.position.z===posicioninicial.position.z){
@@ -1151,9 +1151,9 @@ Cursor.prototype.act = function(environment){
 				seleccion.position.x=posicioninicial.position.x;seleccion.position.z=posicioninicial.position.z;
 			}
 		    }//fin prototype act
-		 
+		  alert("Terminó tu turno  ");
 		  }//fin if peonblanco4
-			   alert("Terminó tu turno  ");
+			  
 //////////////////////////////////    Peón Blanco 5     //////////////////////////////////////////////////////////
 		  if (peonblanco5.position.x===posicioninicial.position.x && peonblanco5.position.z===posicioninicial.position.z){
 		    var bvpb5=seleccion;//Selecciontorreblanca1
@@ -1249,9 +1249,9 @@ Cursor.prototype.act = function(environment){
 				seleccion.position.x=posicioninicial.position.x;seleccion.position.z=posicioninicial.position.z;
 			}
 		    }//fin prototype act
-		  
+		   alert("Terminó tu turno  ");
 		  }//fin if peonblanco5
-			  alert("Terminó tu turno  ");
+			 
 //////////////////////////////////    Peón Blanco 6     //////////////////////////////////////////////////////////
 		  if (peonblanco6.position.x===posicioninicial.position.x && peonblanco6.position.z===posicioninicial.position.z){
 		    var bvpb6=seleccion;//Selecciontorreblanca1
@@ -1347,9 +1347,9 @@ Cursor.prototype.act = function(environment){
 				seleccion.position.x=posicioninicial.position.x;seleccion.position.z=posicioninicial.position.z;
 			}
 		    }//fin prototype act
-		    
+		    alert("Terminó tu turno  ");
 		  }//fin if peonblanco6
-			alert("Terminó tu turno  ");
+			
 			
 //////////////////////////////////    Peón Blanco 7     //////////////////////////////////////////////////////////
 		  if (peonblanco7.position.x===posicioninicial.position.x && peonblanco7.position.z===posicioninicial.position.z){
@@ -1446,9 +1446,9 @@ Cursor.prototype.act = function(environment){
 				seleccion.position.x=posicioninicial.position.x;seleccion.position.z=posicioninicial.position.z;
 			}
 		    }//fin prototype act
-		 
+		  alert("Terminó tu turno  ");
 		  }//fin if peonblanco7
-			   alert("Terminó tu turno  ");
+			  
 			
 //////////////////////////////////     Peón Blanco 8    //////////////////////////////////////////////////////////
 		  if (peonblanco8.position.x===posicioninicial.position.x && peonblanco8.position.z===posicioninicial.position.z){
@@ -1545,9 +1545,9 @@ Cursor.prototype.act = function(environment){
 				seleccion.position.x=posicioninicial.position.x;seleccion.position.z=posicioninicial.position.z;
 			}
 		    }//fin prototype act
-		  
+		    alert("Terminó tu turno  ");
 		  }//fin if peonblanco8
-			  alert("Terminó tu turno  ");
+			
 //////////////////////////////////    Peón Negro 1     ////////////////////////////////////////////////////////////
 		  if (peonnegro1.position.x===posicioninicial.position.x && peonnegro1.position.z===posicioninicial.position.z){
 		    var bvpn1=seleccion;//Selecciontorreblanca1
@@ -1643,9 +1643,9 @@ Cursor.prototype.act = function(environment){
 				seleccion.position.x=posicioninicial.position.x;seleccion.position.z=posicioninicial.position.z;
 			}
 		    }//fin prototype act
-		    
+		    alert("Terminó tu turno  ");
 		  }//fin if peonnegro1
-			alert("Terminó tu turno  ");
+			
 //////////////////////////////////    Peón Negro 2     ////////////////////////////////////////////////////////////
 		  if (peonnegro2.position.x===posicioninicial.position.x && peonnegro2.position.z===posicioninicial.position.z){
 		    var bvpn2=seleccion;//Selecciontorreblanca1
@@ -1741,9 +1741,9 @@ Cursor.prototype.act = function(environment){
 				seleccion.position.x=posicioninicial.position.x;seleccion.position.z=posicioninicial.position.z;
 			}
 		    }//fin prototype act
-		   
+		    alert("Terminó tu turno  ");
 		  }//fin if peonnegro2
-			 alert("Terminó tu turno  ");
+			
 			
 //////////////////////////////////    Peón Negro 3     ////////////////////////////////////////////////////////////
 		  if (peonnegro3.position.x===posicioninicial.position.x && peonnegro3.position.z===posicioninicial.position.z){
@@ -1840,9 +1840,9 @@ Cursor.prototype.act = function(environment){
 				seleccion.position.x=posicioninicial.position.x;seleccion.position.z=posicioninicial.position.z;
 			}
 		    }//fin prototype act
-		   
+		   alert("Terminó tu turno  ");
 		  }//fin if peonnegro3
-			 alert("Terminó tu turno  ");
+			 
 			
 //////////////////////////////////    Peón Negro 4     ////////////////////////////////////////////////////////////
 		  if (peonnegro4.position.x===posicioninicial.position.x && peonnegro4.position.z===posicioninicial.position.z){
@@ -1939,9 +1939,9 @@ Cursor.prototype.act = function(environment){
 				seleccion.position.x=posicioninicial.position.x;seleccion.position.z=posicioninicial.position.z;
 			}
 		    }//fin prototype act
-		  
+		  alert("Terminó tu turno  ");
 		  }//fin if peonnegro4
-			  alert("Terminó tu turno  ");
+			  
 //////////////////////////////////    Peón Negro 5     ////////////////////////////////////////////////////////////
 		  if (peonnegro5.position.x===posicioninicial.position.x && peonnegro5.position.z===posicioninicial.position.z){
 		    var bvpn5=seleccion;//Selecciontorreblanca1
@@ -2037,9 +2037,9 @@ Cursor.prototype.act = function(environment){
 				seleccion.position.x=posicioninicial.position.x;seleccion.position.z=posicioninicial.position.z;
 			}
 		    }//fin prototype act
-		   
+		   alert("Terminó tu turno  ");
 		  }//fin if peonnegro5
-			 alert("Terminó tu turno  ");
+			 
 //////////////////////////////////    Peón Negro 6     ////////////////////////////////////////////////////////////
 		  if (peonnegro6.position.x===posicioninicial.position.x && peonnegro6.position.z===posicioninicial.position.z){
 		    var bvpn6=seleccion;//Selecciontorreblanca1
@@ -2135,9 +2135,9 @@ Cursor.prototype.act = function(environment){
 				seleccion.position.x=posicioninicial.position.x;seleccion.position.z=posicioninicial.position.z;
 			}
 		    }//fin prototype act
-		   
+		    alert("Terminó tu turno  ");
 		  }//fin if peonnegro6
-			 alert("Terminó tu turno  ");
+			
 //////////////////////////////////    Peón Negro 7     ////////////////////////////////////////////////////////////
 		  if (peonnegro7.position.x===posicioninicial.position.x && peonnegro7.position.z===posicioninicial.position.z){
 		    var bvpn7=seleccion;//Selecciontorreblanca1
@@ -2233,9 +2233,9 @@ Cursor.prototype.act = function(environment){
 				seleccion.position.x=posicioninicial.position.x;seleccion.position.z=posicioninicial.position.z;
 			}
 		    }//fin prototype act
-		    
+		    alert("Terminó tu turno  ");
 		  }//fin if peonnegro7
-			alert("Terminó tu turno  ");
+			
 			
 //////////////////////////////////    Peón Negro 8     ////////////////////////////////////////////////////////////
 		  if (peonnegro8.position.x===posicioninicial.position.x && peonnegro8.position.z===posicioninicial.position.z){
@@ -2332,9 +2332,9 @@ Cursor.prototype.act = function(environment){
 				seleccion.position.x=posicioninicial.position.x;seleccion.position.z=posicioninicial.position.z;
 			}
 		    }//fin prototype act
-		   
+		   alert("Terminó tu turno  ");
 		  }//fin if peonnegro8
-			 alert("Terminó tu turno  ");
+			 
 			
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////   ALFILES   ///////////////////////////////////////////////////
@@ -2434,9 +2434,9 @@ Cursor.prototype.act = function(environment){
 				seleccion.position.x=posicioninicial.position.x;seleccion.position.z=posicioninicial.position.z;
 			}
 		    }//fin prototype act
-		 
+		 alert("Terminó tu turno  ");
 		  }//fin if alfilblanco1
-			   alert("Terminó tu turno  ");
+			   
 
 //////////////////////////////////    Alfil Blanco 2    ///////////////////////////////////////////////////////////
 		  if (alfilblanco2.position.x===posicioninicial.position.x && alfilblanco2.position.z===posicioninicial.position.z){
@@ -2532,9 +2532,9 @@ Cursor.prototype.act = function(environment){
 				seleccion.position.x=posicioninicial.position.x;seleccion.position.z=posicioninicial.position.z;
 			}
 		    }//fin prototype act
-		  
+		  alert("Terminó tu turno  ");
 		  }//fin if alfilblanco2
-			  alert("Terminó tu turno  ");
+			  
 
 //////////////////////////////////    Alfil Negro 1    ////////////////////////////////////////////////////////////
 		  if (alfilnegro1.position.x===posicioninicial.position.x && alfilnegro1.position.z===posicioninicial.position.z){
@@ -2630,9 +2630,9 @@ Cursor.prototype.act = function(environment){
 				seleccion.position.x=posicioninicial.position.x;seleccion.position.z=posicioninicial.position.z;
 			}
 		    }//fin prototype act
-		    
+		    alert("Terminó tu turno  ");
 		  }//fin if alfilnegro1
-			alert("Terminó tu turno  ");
+			
 
 //////////////////////////////////    Alfil Negro 2    ////////////////////////////////////////////////////////////
 		  if (alfilnegro2.position.x===posicioninicial.position.x && alfilnegro2.position.z===posicioninicial.position.z){
@@ -2728,9 +2728,9 @@ Cursor.prototype.act = function(environment){
 				seleccion.position.x=posicioninicial.position.x;seleccion.position.z=posicioninicial.position.z;
 			}
 		    }//fin prototype act
-		    
+		    alert("Terminó tu turno  ");
 		  }//fin if alfilnegro2
-			alert("Terminó tu turno  ");
+			
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////    REINAS     /////////////////////////////////////////////////
@@ -2830,9 +2830,9 @@ Cursor.prototype.act = function(environment){
 				seleccion.position.x=posicioninicial.position.x;seleccion.position.z=posicioninicial.position.z;
 			}
 		    }//fin prototype act
-		 
+		 alert("Terminó tu turno  ");
 		  }//fin if reinablanca
-			   alert("Terminó tu turno  ");
+			   
 
 //////////////////////////////////    Reina Negra    ////////////////////////////////////////////////////////////
 		  if (reinanegra.position.x===posicioninicial.position.x && reinanegra.position.z===posicioninicial.position.z){
@@ -2928,9 +2928,9 @@ Cursor.prototype.act = function(environment){
 				seleccion.position.x=posicioninicial.position.x;seleccion.position.z=posicioninicial.position.z;
 			}
 		    }//fin prototype act
-		 
+		 alert("Terminó tu turno  ");
 		  }//fin if reinanegra
-			   alert("Terminó tu turno  ");
+			   
 			
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -3031,9 +3031,9 @@ Cursor.prototype.act = function(environment){
 				seleccion.position.x=posicioninicial.position.x;seleccion.position.z=posicioninicial.position.z;
 			}
 		    }//fin prototype act
-		   
+		   alert("Terminó tu turno  ");
 		  }//fin if reyblanco
-			 alert("Terminó tu turno  ");
+			 
 			
 //////////////////////////////////    Rey Negro    ///////////////////////////////////////////////////////////////
 		  if (reynegro.position.x===posicioninicial.position.x && reynegro.position.z===posicioninicial.position.z){
@@ -3129,9 +3129,9 @@ Cursor.prototype.act = function(environment){
 				seleccion.position.x=posicioninicial.position.x;seleccion.position.z=posicioninicial.position.z;
 			}
 		    }//fin prototype act
-		   
+		   alert("Terminó tu turno  ");
 		  }//fin if reynegro
-			 alert("Terminó tu turno  ");
+			 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////  CABALLOS    //////////////////////////////////////////////////
@@ -3238,9 +3238,9 @@ Cursor.prototype.act = function(environment){
 				seleccion.position.x=posicioninicial.position.x;seleccion.position.z=posicioninicial.position.z;
 			}
 		    }//fin prototype act
-		    
+		    alert("Terminó tu turno  ");
 		  }//fin if caballoblanco1
-			alert("Terminó tu turno  ");
+			
 			
 //////////////////////////////////    Caballo Blanco 2   //////////////////////////////////////////////////////////			
 		  if (caballoblanco2.position.x===posicioninicial.position.x && caballoblanco2.position.z===posicioninicial.position.z){
@@ -3343,9 +3343,9 @@ Cursor.prototype.act = function(environment){
 				seleccion.position.x=posicioninicial.position.x;seleccion.position.z=posicioninicial.position.z;
 			}
 		    }//fin prototype act
-		   
+		   alert("Terminó tu turno  ");
 		  }//fin if caballoblanco2
-			 alert("Terminó tu turno  ");
+			 
 			
 //////////////////////////////////    Caballo Negro 1   ////////////////////////////////////////////////////////////
 		  if (caballonegro1.position.x===posicioninicial.position.x && caballonegro1.position.z===posicioninicial.position.z){
@@ -3448,9 +3448,9 @@ Cursor.prototype.act = function(environment){
 				seleccion.position.x=posicioninicial.position.x;seleccion.position.z=posicioninicial.position.z;
 			}
 		    }//fin prototype act
-		   
+		   alert("Terminó tu turno  ");
 		  }//fin if caballonegro1
-			 alert("Terminó tu turno  ");
+			 
 
 //////////////////////////////////    Caballo Negro 2   ////////////////////////////////////////////////////////////
 		  if (caballonegro2.position.x===posicioninicial.position.x && caballonegro2.position.z===posicioninicial.position.z){
@@ -3553,8 +3553,9 @@ Cursor.prototype.act = function(environment){
 				seleccion.position.x=posicioninicial.position.x;seleccion.position.z=posicioninicial.position.z;
 			}
 		    }//fin prototype act
+		    alert("Terminó tu turno  ");
 		  }//fin if caballonegro2
-			alert("Terminó tu turno  ");
+			
                 bandera=0;
 		}//fin if bandera
 		///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
