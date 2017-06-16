@@ -44,7 +44,7 @@ Environment.prototype.act = function(){
 
 var camara,escena,renderizador;
 var malla,malla2,malla3,grupo,grupo2,grupo3,grupomorado;
-var cursor,posicioninicial,seleccion;
+var ayuda,cursor,posicioninicial,seleccion;
 var bandera=0,banderacaballo=0;
 var torreblanca1,torreblanca2,torrenegra1,torrenegra2;
 var peonblanco1,peonblanco2,peonblanco3,peonblanco4,peonblanco5,peonblanco6,peonblanco7,peonblanco8;
