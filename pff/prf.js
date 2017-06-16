@@ -58,8 +58,8 @@ var reyblanco,reynegro;
 var Gris = new THREE.MeshLambertMaterial({ map: THREE.ImageUtils.loadTexture('maden.jpg') });
 var Blanco = new THREE.MeshLambertMaterial({ map: THREE.ImageUtils.loadTexture('madera.jpg') });
 var Marco = new THREE.MeshLambertMaterial({ map: THREE.ImageUtils.loadTexture('cristal.jpg') });
-var GrisLiso = new THREE.MeshLambertMaterial({color: 0x9F9492});
-var BlancoLiso = new THREE.MeshLambertMaterial({color: 0xF5F5F5});
+var GrisLiso = new THREE.MeshLambertMaterial({map: THREE.ImageUtils.loadTexture('mapim.jpg'});
+var BlancoLiso = new THREE.MeshLambertMaterial({map: THREE.ImageUtils.loadTexture('mapib.jpg'});
 
 //Sensor
 function Sensor(position,direction){ 
@@ -3849,9 +3849,9 @@ VENTANA.setup=function() {
 
   //////////////////////////////////////////////////Camara///////////////////////////////////////////////////////////////////////
   VENTANA.camara = new THREE.PerspectiveCamera();
-  VEnTANA.camara.position.z=150;
-  VENTANA.camara.position.x=-30;
-  VENTANA.camara.position.y=0;
+  camara.position.z=150;
+  camara.position.x=-30;
+  camara.position.y=0;
   //camara.lookAt(45, 20, -45);
   var lienzo=document.getElementById("prf.js");
   ///////////////////////////////////////////Renderizador//////////////////////////////////////////////////////////////////////////
