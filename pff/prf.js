@@ -59,7 +59,7 @@ var Gris = new THREE.MeshLambertMaterial({ map: THREE.ImageUtils.loadTexture('ma
 var Blanco = new THREE.MeshLambertMaterial({ map: THREE.ImageUtils.loadTexture('madera.jpg') });
 var Marco = new THREE.MeshLambertMaterial({ map: THREE.ImageUtils.loadTexture('cristal.jpg') });
 var GrisLiso = new THREE.MeshLambertMaterial({map: THREE.ImageUtils.loadTexture('mapim.jpg')});
-var BlancoLiso = new THREE.MeshLambertMaterial({map: THREE.ImageUtils.loadTexture('mapib.jpg'});
+var BlancoLiso = new THREE.MeshLambertMaterial({map: THREE.ImageUtils.loadTexture('mapib.jpg')});
 
 //Sensor
 function Sensor(position,direction){ 
