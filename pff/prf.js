@@ -3740,7 +3740,7 @@ function setup() {
   camara = new THREE.PerspectiveCamera();
   camara.position.z=140;
   camara.position.x=-70;
-camara.position.y=0;
+camara.position.y=-2;
   //camara.lookAt(45, 20, -45);
   
   ///////////////////////////////////////////Renderizador//////////////////////////////////////////////////////////////////////////
