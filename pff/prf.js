@@ -298,7 +298,7 @@ Cursor.prototype.act = function(environment){
 		  }
 		}
 		else{
-	  	   escena.remove(grupomorado);
+	  	  
 	           escena.remove(posicioninicial);
 	           escena.remove(seleccion);
 		   if (cursor.position.z>=-70){
@@ -314,7 +314,7 @@ Cursor.prototype.act = function(environment){
 		  }
 		}
 		else{
-	  	   escena.remove(grupomorado);
+	  	   
 	           escena.remove(posicioninicial);
 	           escena.remove(seleccion);
 		   if (cursor.position.x<=70){
@@ -330,7 +330,7 @@ Cursor.prototype.act = function(environment){
 		  }
 		}
 		else{
-	  	   escena.remove(grupomorado);
+	  	   
 	           escena.remove(posicioninicial);
 	           escena.remove(seleccion);
 		   if (cursor.position.z<=-20){
@@ -347,7 +347,7 @@ Cursor.prototype.act = function(environment){
 		  }
 		}
 		else{
-	  	   escena.remove(grupomorado);
+	  	  
 	           escena.remove(posicioninicial);
 	           escena.remove(seleccion);
 		   if (cursor.position.x>=20){
@@ -3553,14 +3553,12 @@ Cursor.prototype.act = function(environment){
 				seleccion.position.x=posicioninicial.position.x;seleccion.position.z=posicioninicial.position.z;
 			}
 		    }//fin prototype act
-		   
 		  }//fin if caballonegro2
 			alert("Terminó tu turno  ");
                 bandera=0;
 		}//fin if bandera
-			 
-		
-        break;
+			
+             break;
 	}//fin switch
     }//fin function desplazar
  }
