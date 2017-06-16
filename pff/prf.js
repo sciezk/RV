@@ -3605,7 +3605,7 @@ camara.position.y=0;
   
   ///////////////////////////////////////////Renderizador//////////////////////////////////////////////////////////////////////////
   renderizador = new THREE.WebGLRenderer({antialias:true});
-  renderizador.setSize( window.innerHeight*.95, window.innerHeight*.95 );
+  renderizador.setSize( window.innerWidth, window.innerHeight);
   renderizador.shadowMap.enabled=true;
   document.body.appendChild(renderizador.domElement);
   
@@ -3749,7 +3749,7 @@ camara.position.y=0;
   escena.add(luzPuntual1, luzPuntual2, luzPuntual3);
  escena.rotateX(Math.PI/4);
 escena.rotateY(Math.PI/2);
-//escena.rotateZ(Math.PI/2);
+escena.rotateZ(Math.PI/2);
 }
 
 function loop() {
