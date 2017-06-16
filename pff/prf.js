@@ -3727,6 +3727,11 @@ function Seleccion(x=0,y=0,z=0){
 }
 
 Seleccion.prototype = new Agent();
+function onWindowResize() {
+				camara.aspect = window.innerWidth / window.innerHeight;
+				camara.updateProjectionMatrix();
+				renderizador.setSize( window.innerWidth, window.innerHeight );
+			}
 //////////////////////////////////////Init y loop/////////////////////////////////////////////////////////////////////////////////////
 
 setup();
@@ -3889,7 +3894,7 @@ camara.position.y=-4;
   escena.add(luzPuntual1, luzPuntual2, luzPuntual3);
  escena.rotateX(Math.PI/3);
  escena.rotateY(Math.PI/2);
-
+window.addEventListener( 'resize', onWindowResize, false );
 
 }
 
