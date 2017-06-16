@@ -3563,7 +3563,7 @@ Cursor.prototype.act = function(environment){
         break;
 	}//fin switch
     }//fin function desplazar
-}//fin Prototype 
+
 
 ////////////////////////////////////Posición Inicial///////////////////////////////////////////////////////////////////////////////////////
 function BloqueRojo(x=0,y=0,z=0){
