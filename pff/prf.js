@@ -3832,26 +3832,34 @@ function Seleccion(x=0,y=0,z=0){
 
 Seleccion.prototype = new Agent();
 //////////////////////////////////////Init y loop/////////////////////////////////////////////////////////////////////////////////////
+var VENTANA = new Object();
+VENTANA.listener=function(){
+  VENTANA.camara.aspect = window.innerWidth / window.innerHeight;
+  VENTANA.camara.updateProjectionMatrix();
+  VENTANA.renderizador.setSize( window.innerWidth, window.innerHeight);
+}
 
-setup();
-loop();
+VENTANA.setup();
+VENTANA.loop();
 
-function setup() {
+VENTANA.setup=function() {
+  var tipo_evento='resize';
+  var capturarp=false;
+  window.addEventListener(tipo_evento, VENTANA.listener, capturarp); 
+  VENTANA.escena = new Environment();	
 
-  escena = new Environment();	
-	
   //////////////////////////////////////////////////Camara///////////////////////////////////////////////////////////////////////
-  camara = new THREE.PerspectiveCamera();
-  camara.position.z=150;
-  camara.position.x=-30;
-camara.position.y=0;
+  VENTANA.camara = new THREE.PerspectiveCamera();
+  VEnTANA.camara.position.z=150;
+  VENTANA.camara.position.x=-30;
+  VENTANA.camara.position.y=0;
   //camara.lookAt(45, 20, -45);
-  
+  var lienzo=document.getElementById("prf.js");
   ///////////////////////////////////////////Renderizador//////////////////////////////////////////////////////////////////////////
-  renderizador = new THREE.WebGLRenderer({antialias:true});
-  renderizador.setSize( window.innerHeight*.95, window.innerHeight*.95 );
-  renderizador.shadowMap.enabled=true;
-  document.body.appendChild(renderizador.domElement);
+  VENTANA.renderizador = new THREE.WebGLRenderer({antialias:true});
+  VENTANA.renderizador.setSize( window.innerHeight*.95, window.innerHeight*.95 );
+  VENTANA.renderizador.shadowMap.enabled=true;
+  VENTANA.document.body.appendChild(VENTANA.renderizador.domElement);
   
   /////////////////////////////////////////////////////Luces/////////////////////////////////////////////////////////////////////
    var luzPuntual1 = new THREE.PointLight(0xFFFFFF,1);
@@ -3871,7 +3879,7 @@ camara.position.y=0;
 
   ///////////////////////////////////////////Tablero////////////////////////////////////////////////////////////////
    var lado = 10;
-   var forma = new THREE.BoxBufferGeometry(lado,lado,lado);
+   VENTANA.var forma = new THREE.BoxBufferGeometry(lado,lado,lado);
    cubos = [];
    var material = Blanco;
    
@@ -3883,7 +3891,7 @@ camara.position.y=0;
        else{
            material= Gris;
            }
-       cubo = new THREE.Mesh(forma ,material);
+       VENTANA.cubo = new THREE.Mesh(forma ,material);
        cubo.position.x = (j+1)*lado;
        cubo.position.z = (-i-1)*lado;
        cubos.push(cubo)
@@ -3891,40 +3899,40 @@ camara.position.y=0;
        }
    }
 
-   orilla1 = new THREE.BoxGeometry( 90, 10, 5 ); //Superior
+   VENTANA.orilla1 = new THREE.BoxGeometry( 90, 10, 5 ); //Superior
    var material1 = Marco;
-   marco1 = new THREE.Mesh( orilla1, material1 );
+   VENTANA.marco1 = new THREE.Mesh( orilla1, material1 );
    marco1.translateZ(-87.5);
    marco1.translateX(45);
    marco1.receiveShadow = true;
 
-   orilla2 = new THREE.BoxGeometry( 5, 10, 90 ); //Derecha
+   VENTANA.orilla2 = new THREE.BoxGeometry( 5, 10, 90 ); //Derecha
    var material2 = Marco;
-   marco2 = new THREE.Mesh( orilla2, material2);
+   VENTANA.marco2 = new THREE.Mesh( orilla2, material2);
    marco2.translateZ(-45);
    marco2.translateX(87.5);
    marco2.receiveShadow = true;
 
-   orilla3 = new THREE.BoxGeometry( 90, 10, 5 ); //Izquierda
+   VENTANA.orilla3 = new THREE.BoxGeometry( 90, 10, 5 ); //Izquierda
    var material3 = Marco;
-   marco3 = new THREE.Mesh( orilla3, material3);
+   VENTANA.marco3 = new THREE.Mesh( orilla3, material3);
    marco3.translateZ(-2.5);
    marco3.translateX(45);
    marco3.receiveShadow = true;
 
-   orilla4 = new THREE.BoxGeometry( 5, 10, 80 ); //Baja
+   VENTANA.orilla4 = new THREE.BoxGeometry( 5, 10, 80 ); //Baja
    var material4 = Marco;
-   marco4 = new THREE.Mesh( orilla4, material4);
+   VENTANA.marco4 = new THREE.Mesh( orilla4, material4);
    marco4.translateZ(-45);
    marco4.translateX(2.5);
    marco4.receiveShadow = true;
    
    //Agregar tablero a  escena
-   escena.add(marco1, marco2, marco3, marco4);
+   VENTANA.escena.add(marco1, marco2, marco3, marco4);
    
    for(var q=0; q<=63; q++){
       cubos[q].receiveShadow = true;
-      escena.add(cubos[q]);
+      VENTANA.escena.add(cubos[q]);
    }
 	
   ///////////////////////////////////////////Torres////////////////////////////////////////////////////////////////
@@ -3933,7 +3941,7 @@ camara.position.y=0;
   torrenegra1 = new TorreNegra(80,4.5,-10);
   torrenegra2 = new TorreNegra(80,4.5,-80);
 	
-  escena.add(torreblanca1,torreblanca2,torrenegra1,torrenegra2);
+  VENTANA.escena.add(torreblanca1,torreblanca2,torrenegra1,torrenegra2);
 	
   /////////////////////////////////////////Peones/////////////////////////////////////////////////////////////////
   peonblanco1 = new PeonBlanco(20,4.5,-10);
@@ -3954,8 +3962,8 @@ camara.position.y=0;
   peonnegro7 = new PeonNegro(70,4.5,-70);
   peonnegro8 = new PeonNegro(70,4.5,-80);
 	
-  escena.add(peonblanco1,peonblanco2,peonblanco3,peonblanco4,peonblanco5,peonblanco6,peonblanco7,peonblanco8);
-  escena.add(peonnegro1,peonnegro2,peonnegro3,peonnegro4,peonnegro5,peonnegro6,peonnegro7,peonnegro8);
+  VENTANA.escena.add(peonblanco1,peonblanco2,peonblanco3,peonblanco4,peonblanco5,peonblanco6,peonblanco7,peonblanco8);
+  VENTANA.escena.add(peonnegro1,peonnegro2,peonnegro3,peonnegro4,peonnegro5,peonnegro6,peonnegro7,peonnegro8);
 	
   /////////////////////////////////////////Alfiles/////////////////////////////////////////////////////////////////
   alfilblanco1 = new AlfilBlanco(10,4.5,-30);
@@ -3963,7 +3971,7 @@ camara.position.y=0;
   alfilnegro1 = new AlfilNegro(80,4.5,-30);
   alfilnegro2 = new AlfilNegro(80,4.5,-60);
 	
-  escena.add(alfilblanco1,alfilblanco2,alfilnegro1,alfilnegro2);
+  VENTANA.escena.add(alfilblanco1,alfilblanco2,alfilnegro1,alfilnegro2);
 	
   ////////////////////////////////////////////Caballos/////////////////////////////////////////////////////////////
   caballoblanco1 = new CaballoBlanco(10,4.5,-20);
@@ -3971,35 +3979,35 @@ camara.position.y=0;
   caballonegro1 = new CaballoNegro(80,4.5,-20);
   caballonegro2 = new CaballoNegro(80,4.5,-70);
 	
-  escena.add(caballoblanco1,caballoblanco2,caballonegro1,caballonegro2);	
+  VENTANA.escena.add(caballoblanco1,caballoblanco2,caballonegro1,caballonegro2);	
 	
   ////////////////////////////////////////////Reinas/////////////////////////////////////////////////////////////////
   reinablanca = new ReinaBlanca(10,4.5,-40);
   reinanegra = new ReinaNegra(80,4.5,-40);
 	
-  escena.add(reinablanca,reinanegra);
+  VENTANA.escena.add(reinablanca,reinanegra);
 	
   ///////////////////////////////////////////Reyes////////////////////////////////////////////////////////////////////
   reyblanco = new ReyBlanco(10,4.5,-50);
   reynegro = new ReyNegro(80,4.5,-50);
 	
-  escena.add(reyblanco,reynegro);	
+  VENTANA.escena.add(reyblanco,reynegro);	
 	
   /////////////////////////////////////////Bloques////////////////////////////////////////////////////////////////////
   cursor = new Cursor(10,0,-10);
-  escena.add(cursor);
+  VENTANA.escena.add(cursor);
   
   //Luces
-  escena.add(luzPuntual1, luzPuntual2, luzPuntual3);
- escena.rotateX(Math.PI/4);
-escena.rotateY(Math.PI/2);
+  VENTANA.escena.add(luzPuntual1, luzPuntual2, luzPuntual3);
+  VENTANA.escena.rotateX(Math.PI/4);
+  VENTANA.escena.rotateY(Math.PI/2);
 //escena.rotateZ(Math.PI/2);
 }
-
-function loop() {
-  requestAnimationFrame(loop);
-  escena.sense();
-  escena.plan();
-  escena.act();
-  renderizador.render(escena,camara);
+VENTANA.loop=function(){
+	
+  requestAnimationFrame(VENTANA.loop);
+  VENTANA.escena.sense();
+  VENTANA.escena.plan();
+  VENTANA.escena.act();
 }
+
