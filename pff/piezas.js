@@ -589,20 +589,68 @@
 
 
 //Geometría de la torre
+  var arco1 = new THREE.Shape();
+  arco1.moveTo(0, 0);
+  arco1.arc(0, 0, 4, .52, -.52, true);
+  arco1.lineTo(3.46, -2);
+  var pico1 = new THREE.ExtrudeGeometry( arco1, {amount: 1, bevelEnabled: false});
+  pico1.rotateX(Math.PI/2);
+
+  var arco2 = new THREE.Shape();
+  arco2.moveTo(0, 0);
+  arco2.arc(0, 0, 4, .52, -.52, true);
+  arco2.lineTo(3.46, -2);
+  var pico2 = new THREE.ExtrudeGeometry( arco2, {amount: 1, bevelEnabled: false});
+  pico2.rotateX(Math.PI/2);
+  pico2.rotateY(Math.PI/2);
+
+  var arco3 = new THREE.Shape();
+  arco3.moveTo(0, 0);
+  arco3.arc(0, 0, 4, .52, -.52, true);
+  arco3.lineTo(3.46, -2);
+  var pico3 = new THREE.ExtrudeGeometry( arco3, {amount: 1, bevelEnabled: false});
+  pico3.rotateX(Math.PI/2);
+  pico3.rotateY(Math.PI);
+
+  var arco4 = new THREE.Shape();
+  arco4.moveTo(0, 0);
+  arco4.arc(0, 0, 4, .52, -.52, true);
+  arco4.lineTo(3.46, -2);
+  var pico4 = new THREE.ExtrudeGeometry( arco4, {amount: 1, bevelEnabled: false});
+  pico4.rotateX(Math.PI/2);
+  pico4.rotateY(Math.PI*3/2);
+
+  
+ 
+ 
+  
 var troncoForma = new THREE.CylinderGeometry(3, 3, 8);
 var baseForma = new THREE.CylinderGeometry(4, 4, 1);
 var subaseForma = new THREE.CylinderGeometry(5, 5, 1);
-var superiorForma = new THREE.CylinderGeometry(0, 5, 3.5);
+var superiorForma = new THREE.CylinderGeometry(5, 5, 3.5);
 superiorForma.translate(0,10.5,0);
 subaseForma.translate(0,0.5,0);
 baseForma.translate(0,1.5,0);
 troncoForma.translate(0,4.5,0);
+
+   pico1.translate(0,12,0);
+  pico2.translate(0,12,0);
+  pico3.translate(0,12,0);
+  pico4.translate(0,12,0);
 var troncoMalla = new THREE.Mesh(troncoForma);
 var baseMalla = new THREE.Mesh(baseForma);
 var subaseMalla = new THREE.Mesh(subaseForma);
 var superiorMalla = new THREE.Mesh(superiorForma);
+ var pico1Malla= new THREE.Mesh(pico1);
+  var pico2Malla= new THREE.Mesh(pico2);
+  var pico3Malla= new THREE.Mesh(pico3);
+  var pico4Malla= new THREE.Mesh(pico4);
 var torreForma = new THREE.Geometry();
 torreForma.merge(troncoMalla.geometry, troncoMalla.matrix);
 torreForma.merge(baseMalla.geometry, baseMalla.matrix);
 torreForma.merge(subaseMalla.geometry, subaseMalla.matrix);
 torreForma.merge(superiorMalla.geometry, superiorMalla.matrix);
+  torreForma.merge(pico1Malla.geometry, pico1Malla.matrix);
+  torreForma.merge(pico2Malla.geometry, pico2Malla.matrix);
+  torreForma.merge(pico3Malla.geometry, pico3Malla.matrix);
+  torreForma.merge(pico4Malla.geometry, pico4Malla.matrix);
