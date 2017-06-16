@@ -3879,7 +3879,7 @@ VENTANA.setup=function() {
 
   ///////////////////////////////////////////Tablero////////////////////////////////////////////////////////////////
    var lado = 10;
-   VENTANA.var forma = new THREE.BoxBufferGeometry(lado,lado,lado);
+   var forma = new THREE.BoxBufferGeometry(lado,lado,lado);
    cubos = [];
    var material = Blanco;
    
