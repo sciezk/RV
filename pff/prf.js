@@ -3889,8 +3889,8 @@ setup=function() {
   
   /////////////////////////////////////////////////////Luces/////////////////////////////////////////////////////////////////////
    var luzPuntual1 = new THREE.PointLight(0xFFFFFF,1);
-   luzPuntual1.position.x = -50;
-   luzPuntual1.position.y = 300;
+   luzPuntual1.position.x = 40;
+   luzPuntual1.position.y = 40;
    luzPuntual1.position.z = 50;
 	
    var luzPuntual2 = new THREE.PointLight(0xFFFFFF,1);
@@ -4025,13 +4025,13 @@ setup=function() {
   
   //Luces
  escena.add(luzPuntual1, luzPuntual2, luzPuntual3);
- escena.rotateX(Math.PI/4);
+ escena.rotateX(Math.PI/2);
  escena.rotateY(Math.PI/2);
 //escena.rotateZ(Math.PI/2);
 }
 loop=function(){
 	
-  requestAnimationFrame(loop);
+requestAnimationFrame(loop);
 escena.sense();
 escena.plan();
 escena.act();
