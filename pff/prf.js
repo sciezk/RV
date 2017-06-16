@@ -3559,11 +3559,11 @@ Cursor.prototype.act = function(environment){
                 bandera=0;
 		}//fin if bandera
 			 
-		}//fin else
+		
         break;
 	}//fin switch
     }//fin function desplazar
-
+ }
 
 ////////////////////////////////////Posición Inicial///////////////////////////////////////////////////////////////////////////////////////
 function BloqueRojo(x=0,y=0,z=0){
