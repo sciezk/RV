@@ -44,7 +44,7 @@ Environment.prototype.act = function(){
 
 var camara,escena,renderizador;
 var malla,malla2,malla3,grupo,grupo2,grupo3,grupomorado;
-var ayuda,cursor,posicioninicial,seleccion;
+var cursor,posicioninicial,seleccion;
 var bandera=0,banderacaballo=0;
 var torreblanca1,torreblanca2,torrenegra1,torrenegra2;
 var peonblanco1,peonblanco2,peonblanco3,peonblanco4,peonblanco5,peonblanco6,peonblanco7,peonblanco8;
@@ -3570,15 +3570,7 @@ Cursor.prototype.act = function(environment){
 		         (torrenegra1.position.x===posicioninicial.position.x && torrenegra1.position.z===posicioninicial.position.z))||
 		         (torrenegra2.position.x===posicioninicial.position.x && torrenegra2.position.z===posicioninicial.position.z)){
 		     grupomorado = new THREE.Group();
-		     for (i=1;i<=8;i++){ 
-		       ayuda = new Ayuda(posicioninicial.position.x,0,-i*10);
-		       grupomorado.add(ayuda);
-		     }
-		     for (i=1;i<=8;i++){ 
-		       ayuda = new Ayuda(i*10,0,posicioninicial.position.z);
-		       grupomorado.add(ayuda);
-		     }	
-		     escena.add(grupomorado);  
+		    escena.add(grupomorado);  
 	             seleccion = new Seleccion(posicioninicial.position.x,0,posicioninicial.position.z);
 		     escena.add(seleccion);
 		     bandera=1;
@@ -3593,34 +3585,8 @@ Cursor.prototype.act = function(environment){
 			     (peonblanco7.position.x===posicioninicial.position.x && peonblanco7.position.z===posicioninicial.position.z))||
 		             (peonblanco8.position.x===posicioninicial.position.x && peonblanco8.position.z===posicioninicial.position.z)){
 		     grupomorado = new THREE.Group();
-		     ayuda = new Ayuda(posicioninicial.position.x+10,0,posicioninicial.position.z);
-		     if (ayuda.position.x>80){
-			ayuda.visible=false;
-		     }
-		     grupomorado.add(ayuda);
-		     if ((((((((((((((((peonnegro1.position.x===posicioninicial.position.x+10 && peonnegro1.position.z===posicioninicial.position.z-10)||
-			     (peonnegro2.position.x===posicioninicial.position.x+10 && peonnegro2.position.z===posicioninicial.position.z-10))||
-			     (peonnegro3.position.x===posicioninicial.position.x+10 && peonnegro3.position.z===posicioninicial.position.z-10))||
-			     (peonnegro4.position.x===posicioninicial.position.x+10 && peonnegro4.position.z===posicioninicial.position.z-10))||
-			     (peonnegro5.position.x===posicioninicial.position.x+10 && peonnegro5.position.z===posicioninicial.position.z-10))||
-			     (peonnegro6.position.x===posicioninicial.position.x+10 && peonnegro6.position.z===posicioninicial.position.z-10))||
-			     (peonnegro7.position.x===posicioninicial.position.x+10 && peonnegro7.position.z===posicioninicial.position.z-10))||
-		             (peonnegro8.position.x===posicioninicial.position.x+10 && peonnegro8.position.z===posicioninicial.position.z-10))||
-			     (torrenegra1.position.x===posicioninicial.position.x+10 && torrenegra1.position.z===posicioninicial.position.z-10))||
-		             (torrenegra2.position.x===posicioninicial.position.x+10 && torrenegra2.position.z===posicioninicial.position.z-10))||
-		             (caballonegro1.position.x===posicioninicial.position.x+10 && caballonegro1.position.z===posicioninicial.position.z-10))||
-		             (caballonegro2.position.x===posicioninicial.position.x+10 && caballonegro2.position.z===posicioninicial.position.z-10))||
-		             (alfilnegro1.position.x===posicioninicial.position.x+10 && alfilnegro1.position.z===posicioninicial.position.z-10))||
-		             (alfilnegro2.position.x===posicioninicial.position.x+10 && alfilnegro2.position.z===posicioninicial.position.z-10))||
-		             (reinanegra.position.x===posicioninicial.position.x+10 && reinanegra.position.z===posicioninicial.position.z-10))||
-		             (reynegro.position.x===posicioninicial.position.x+10 && reynegro.position.z===posicioninicial.position.z-10)){
-			     ayuda = new Ayuda(posicioninicial.position.x+10,0,posicioninicial.position.z-10);
-		     	     if (ayuda.position.x>80){
-				ayuda.visible=false;
-		     	     }
-		     	     grupomorado.add(ayuda);
-		     }
-		     if ((((((((((((((((peonnegro1.position.x===posicioninicial.position.x+10 && peonnegro1.position.z===posicioninicial.position.z+10)||
+		    
+		      if ((((((((((((((((peonnegro1.position.x===posicioninicial.position.x+10 && peonnegro1.position.z===posicioninicial.position.z+10)||
 			     (peonnegro2.position.x===posicioninicial.position.x+10 && peonnegro2.position.z===posicioninicial.position.z+10))||
 			     (peonnegro3.position.x===posicioninicial.position.x+10 && peonnegro3.position.z===posicioninicial.position.z+10))||
 			     (peonnegro4.position.x===posicioninicial.position.x+10 && peonnegro4.position.z===posicioninicial.position.z+10))||
@@ -3636,12 +3602,7 @@ Cursor.prototype.act = function(environment){
 		             (alfilnegro2.position.x===posicioninicial.position.x+10 && alfilnegro2.position.z===posicioninicial.position.z+10))||
 		             (reinanegra.position.x===posicioninicial.position.x+10 && reinanegra.position.z===posicioninicial.position.z+10))||
 		             (reynegro.position.x===posicioninicial.position.x+10 && reynegro.position.z===posicioninicial.position.z+10)){
-			     ayuda = new Ayuda(posicioninicial.position.x+10,0,posicioninicial.position.z+10);
-		     	     if (ayuda.position.x>80){
-				ayuda.visible=false;
-		     	     }
-		     	     grupomorado.add(ayuda);
-		     }
+			     }
 		     escena.add(grupomorado);  
 	             seleccion = new Seleccion(posicioninicial.position.x,0,posicioninicial.position.z);
 		     escena.add(seleccion);
@@ -3656,12 +3617,7 @@ Cursor.prototype.act = function(environment){
 			     (peonnegro7.position.x===posicioninicial.position.x && peonnegro7.position.z===posicioninicial.position.z))||
 		             (peonnegro8.position.x===posicioninicial.position.x && peonnegro8.position.z===posicioninicial.position.z)){
 		         grupomorado = new THREE.Group();
-		         ayuda = new Ayuda(posicioninicial.position.x-10,0,posicioninicial.position.z);
-		     if (ayuda.position.x<10){
-			ayuda.visible=false;
-		     }
-		     grupomorado.add(ayuda);
-		     if (((((((((((((((peonblanco1.position.x===posicioninicial.position.x-10 && peonblanco1.position.z===posicioninicial.position.z-10)||
+		        if (((((((((((((((peonblanco1.position.x===posicioninicial.position.x-10 && peonblanco1.position.z===posicioninicial.position.z-10)||
 			     (peonblanco2.position.x===posicioninicial.position.x-10 && peonblanco2.position.z===posicioninicial.position.z-10))||
 			     (peonblanco3.position.x===posicioninicial.position.x-10 && peonblanco3.position.z===posicioninicial.position.z-10))||
 			     (peonblanco4.position.x===posicioninicial.position.x-10 && peonblanco4.position.z===posicioninicial.position.z-10))||
@@ -3677,11 +3633,7 @@ Cursor.prototype.act = function(environment){
 			     (alfilblanco2.position.x===posicioninicial.position.x-10 && alfilblanco2.position.z===posicioninicial.position.z-10))||
 			     (reinablanca.position.x===posicioninicial.position.x-10 && reinablanca.position.z===posicioninicial.position.z-10))||
 		             (reyblanco.position.x===posicioninicial.position.x-10 && reyblanco.position.z===posicioninicial.position.z-10)){
-			     ayuda = new Ayuda(posicioninicial.position.x-10,0,posicioninicial.position.z-10);
-		     	     if (ayuda.position.x<10){
-				ayuda.visible=false;
-		     	     }
-		     	     grupomorado.add(ayuda);
+			    
 		     }
 		     if (((((((((((((((peonblanco1.position.x===posicioninicial.position.x-10 && peonblanco1.position.z===posicioninicial.position.z+10)||
 			     (peonblanco2.position.x===posicioninicial.position.x-10 && peonblanco2.position.z===posicioninicial.position.z+10))||
@@ -3699,11 +3651,7 @@ Cursor.prototype.act = function(environment){
 			     (alfilblanco2.position.x===posicioninicial.position.x-10 && alfilblanco2.position.z===posicioninicial.position.z+10))||
 			     (reinablanca.position.x===posicioninicial.position.x-10 && reinablanca.position.z===posicioninicial.position.z+10))||
 		             (reyblanco.position.x===posicioninicial.position.x-10 && reyblanco.position.z===posicioninicial.position.z+10)){
-			     ayuda = new Ayuda(posicioninicial.position.x-10,0,posicioninicial.position.z+10);
-		     	     if (ayuda.position.x<10){
-				ayuda.visible=false;
-		     	     }
-		     	     grupomorado.add(ayuda);
+			     
 		     }  
 		     escena.add(grupomorado);  
 	             seleccion = new Seleccion(posicioninicial.position.x,0,posicioninicial.position.z);
@@ -3716,26 +3664,6 @@ Cursor.prototype.act = function(environment){
 		         (alfilnegro1.position.x===posicioninicial.position.x && alfilnegro1.position.z===posicioninicial.position.z))||
 		         (alfilnegro2.position.x===posicioninicial.position.x && alfilnegro2.position.z===posicioninicial.position.z)){
 		     grupomorado = new THREE.Group();
-		     for (i=1;i<=8;i++){ 
-		       ayuda = new Ayuda(posicioninicial.position.x+(i*10),0,posicioninicial.position.z-(i*10));
-		       if (ayuda.position.x>80 || ayuda.position.z<-80){ayuda.visible=false;}
-		       grupomorado.add(ayuda);
-		     }
-		     for (i=1;i<=8;i++){ 
-		       ayuda = new Ayuda(posicioninicial.position.x-(i*10),0,posicioninicial.position.z-(i*10));
-		       if (ayuda.position.x<10 || ayuda.position.z<-80){ayuda.visible=false;}
-		       grupomorado.add(ayuda);
-		     }	
-		     for (i=1;i<=8;i++){ 
-		       ayuda = new Ayuda(posicioninicial.position.x+(i*10),0,posicioninicial.position.z+(i*10));
-		       if (ayuda.position.x>80 || ayuda.position.z>-10){ayuda.visible=false;}
-		       grupomorado.add(ayuda);
-		     }
-		     for (i=1;i<=8;i++){ 
-		       ayuda = new Ayuda(posicioninicial.position.x-(i*10),0,posicioninicial.position.z+(i*10));
-		       if (ayuda.position.x<10 || ayuda.position.z>-10){ayuda.visible=false;}
-		       grupomorado.add(ayuda);
-		     }	
 		     escena.add(grupomorado);  
 	             seleccion = new Seleccion(posicioninicial.position.x,0,posicioninicial.position.z);
 		     escena.add(seleccion);
@@ -3745,34 +3673,6 @@ Cursor.prototype.act = function(environment){
 		   if ((reinablanca.position.x===posicioninicial.position.x && reinablanca.position.z===posicioninicial.position.z)||
 		       (reinanegra.position.x===posicioninicial.position.x && reinanegra.position.z===posicioninicial.position.z)){
 		     grupomorado = new THREE.Group();
-		     for (i=1;i<=8;i++){ 
-		       ayuda = new Ayuda(posicioninicial.position.x,0,-i*10);
-		       grupomorado.add(ayuda);
-		     }
-		     for (i=1;i<=8;i++){ 
-		       ayuda = new Ayuda(i*10,0,posicioninicial.position.z);
-		       grupomorado.add(ayuda);
-		     }	
-		     for (i=1;i<=8;i++){ 
-		       ayuda = new Ayuda(posicioninicial.position.x+(i*10),0,posicioninicial.position.z-(i*10));
-		       if (ayuda.position.x>80 || ayuda.position.z<-80){ayuda.visible=false;}
-		       grupomorado.add(ayuda);
-		     }
-		     for (i=1;i<=8;i++){ 
-		       ayuda = new Ayuda(posicioninicial.position.x-(i*10),0,posicioninicial.position.z-(i*10));
-		       if (ayuda.position.x<10 || ayuda.position.z<-80){ayuda.visible=false;}
-		       grupomorado.add(ayuda);
-		     }	
-		     for (i=1;i<=8;i++){ 
-		       ayuda = new Ayuda(posicioninicial.position.x+(i*10),0,posicioninicial.position.z+(i*10));
-		       if (ayuda.position.x>80 || ayuda.position.z>-10){ayuda.visible=false;}
-		       grupomorado.add(ayuda);
-		     }
-		     for (i=1;i<=8;i++){ 
-		       ayuda = new Ayuda(posicioninicial.position.x-(i*10),0,posicioninicial.position.z+(i*10));
-		       if (ayuda.position.x<10 || ayuda.position.z>-10){ayuda.visible=false;}
-		       grupomorado.add(ayuda);
-		     }	
 		     escena.add(grupomorado);  
 	             seleccion = new Seleccion(posicioninicial.position.x,0,posicioninicial.position.z);
 		     escena.add(seleccion);
@@ -3782,30 +3682,6 @@ Cursor.prototype.act = function(environment){
 		   if ((reyblanco.position.x===posicioninicial.position.x && reyblanco.position.z===posicioninicial.position.z)||
 		       (reynegro.position.x===posicioninicial.position.x && reynegro.position.z===posicioninicial.position.z)){
 		     grupomorado = new THREE.Group();
-		     ayuda1 = new Ayuda(posicioninicial.position.x+10,0,posicioninicial.position.z-10);//Noreste
-		     if (ayuda1.position.x>80 || ayuda1.position.z<-80){ayuda1.visible=false;}
-		     grupomorado.add(ayuda1);
-	             ayuda2 = new Ayuda(posicioninicial.position.x,0,posicioninicial.position.z-10);//Norte
-		     if (ayuda2.position.z<-80){ayuda2.visible=false;}
-		     grupomorado.add(ayuda2);
-		     ayuda3 = new Ayuda(posicioninicial.position.x-10,0,posicioninicial.position.z-10);//Noroeste
-		     if (ayuda3.position.x<10 || ayuda3.position.z<-80){ayuda3.visible=false;}
-		     grupomorado.add(ayuda3);
-	             ayuda4 = new Ayuda(posicioninicial.position.x-10,0,posicioninicial.position.z);//Este
-		     if (ayuda4.position.x<10){ayuda4.visible=false;}
-		     grupomorado.add(ayuda4);
-		     ayuda5 = new Ayuda(posicioninicial.position.x-10,0,posicioninicial.position.z+10);//Sureste
-		     if (ayuda5.position.x<10 || ayuda5.position.z>-10){ayuda5.visible=false;}
-		     grupomorado.add(ayuda5);
-	             ayuda6 = new Ayuda(posicioninicial.position.x,0,posicioninicial.position.z+10);//Sur
-		     if (ayuda6.position.z>-10){ayuda6.visible=false;}
-		     grupomorado.add(ayuda6);   
-		     ayuda7 = new Ayuda(posicioninicial.position.x+10,0,posicioninicial.position.z+10);//Suroeste
-		     if (ayuda7.position.x>80 || ayuda7.position.z>-10){ayuda7.visible=false;}
-		     grupomorado.add(ayuda7);
-	             ayuda8 = new Ayuda(posicioninicial.position.x+10,0,posicioninicial.position.z);//Oeste
-		     if (ayuda8.position.x>80){ayuda8.visible=false;}
-		     grupomorado.add(ayuda8); 
 		     escena.add(grupomorado);  
 	             seleccion = new Seleccion(posicioninicial.position.x,0,posicioninicial.position.z);
 		     escena.add(seleccion);
@@ -3817,31 +3693,7 @@ Cursor.prototype.act = function(environment){
 		         (caballonegro1.position.x===posicioninicial.position.x && caballonegro1.position.z===posicioninicial.position.z))||
 		         (caballonegro2.position.x===posicioninicial.position.x && caballonegro2.position.z===posicioninicial.position.z)){
 		     grupomorado = new THREE.Group();
-                     ayuda1 = new Ayuda(posicioninicial.position.x+20,0,posicioninicial.position.z-10);//Noreste
-		     if (ayuda1.position.x>80 || ayuda1.position.z<-80){ayuda1.visible=false;}
-		     grupomorado.add(ayuda1);
-	             ayuda2 = new Ayuda(posicioninicial.position.x+10,0,posicioninicial.position.z-20);//Noreste
-		     if (ayuda2.position.x>80 || ayuda2.position.z<-80){ayuda2.visible=false;}
-		     grupomorado.add(ayuda2);
-		     ayuda3 = new Ayuda(posicioninicial.position.x-10,0,posicioninicial.position.z-20);//Noroeste
-		     if (ayuda3.position.x<10 || ayuda3.position.z<-80){ayuda3.visible=false;}
-		     grupomorado.add(ayuda3);
-	             ayuda4 = new Ayuda(posicioninicial.position.x-20,0,posicioninicial.position.z-10);//Noroeste
-		     if (ayuda4.position.x<10 || ayuda4.position.z<-80){ayuda4.visible=false;}
-		     grupomorado.add(ayuda4);
-		     ayuda5 = new Ayuda(posicioninicial.position.x-20,0,posicioninicial.position.z+10);//Sureste
-		     if (ayuda5.position.x<10 || ayuda5.position.z>-10){ayuda5.visible=false;}
-		     grupomorado.add(ayuda5);
-	             ayuda6 = new Ayuda(posicioninicial.position.x-10,0,posicioninicial.position.z+20);//Sureste
-		     if (ayuda6.position.x<10 || ayuda6.position.z>-10){ayuda6.visible=false;}
-		     grupomorado.add(ayuda6);   
-		     ayuda7 = new Ayuda(posicioninicial.position.x+10,0,posicioninicial.position.z+20);//Suroeste
-		     if (ayuda7.position.x>80 || ayuda7.position.z>-10){ayuda7.visible=false;}
-		     grupomorado.add(ayuda7);
-	             ayuda8 = new Ayuda(posicioninicial.position.x+20,0,posicioninicial.position.z+10);//Suroeste
-		     if (ayuda8.position.x>80 || ayuda8.position.z>-10){ayuda8.visible=false;}
-		     grupomorado.add(ayuda8);  
-		     escena.add(grupomorado);  
+                     escena.add(grupomorado);  
 	             seleccion = new Seleccion(posicioninicial.position.x,0,posicioninicial.position.z);
 		     escena.add(seleccion);
 		     bandera=1;
