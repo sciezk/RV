@@ -1,0 +1,27 @@
+<html>
+<head>
+
+<title>onmouseout test</title>
+
+<style type="text/css">
+.my_box { border: 1px solid red; }
+</style>
+
+<script type="text/javascript">
+
+window.onmouseout = mouseout;
+
+function mouseout()
+{
+ alert("mouseout event detected!");
+}
+</script>
+</head>
+
+<body>
+<div class="my_box">
+<p>move the mouse pointer away from the element it is on<br />
+to fire the mouseout event.</p>
+</div>
+</body>
+</html>
