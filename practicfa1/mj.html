@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Simple circle packing</title>
+    <script src="https://unpkg.com/d3@4.4.1"></script>
+    <style>
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .control {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      padding: 10px 20px;
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-weight: 300;
+      font-size: 13px;
+      background: #fff;
+      border-radius: 4px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.5);
+    }
+
+      .control h4 {
+        font-weight: 300;
+      }
+
+      .control input[type=number] {
+        width: 50px;
+      }
+
+    .circle {
+      fill: black;
+      fill-opacity: 0.5;
+    }
+
+    .enclosing-circle {
+      fill: none;
+      stroke: red;
+    }
+
+    text {
+      fill: white;
+      font-family: Monaco, 'Courier New', Courier, monospace;
+    }
+
+    </style>
+  </head>
+  <body>
+    <form class="control" id="form">
+      <p>Drag points around to update.<br/> Click to add new points</p>
+      <p><label><input type="number" min="0" name="numCircles" step="1" value="10"> circles</label></p>
+      <p><label><input type="number" min="1" value="10" name="minR"> min R</label></p>
+      <p><label><input type="number" min="1" value="100" name="maxR"> max R</label></p>
+      <p><label><input type="checkbox" name="circles" checked> circles</label>
+      <p>
+        <button name="generate" type="reset">Generate</button>
+      </p>
+    </form>
+    <script src="index.js"></script>
+  </body>
+</html>
